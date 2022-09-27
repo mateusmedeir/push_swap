@@ -1,15 +1,21 @@
-SRC	= push_swap.c merge_sort.c
+SRC	= push_swap.c stack.c load_stack.c
 
 CC	= cc
-FLAGS	= -Wall -Wextra -Werror
+FLAGS1	= -Wall -Wextra -Werror
+FLAGS2	= -L./libft -lft
 RM	= rm -f
 
 NAME	= push_swap
 
-all:	$(NAME)
+LIBFT	= libft/libft.a
+
+all:	$(LIBFT) $(NAME)
+
+$(LIBFT):
+	@make -C libft
 
 $(NAME):
-	$(CC) $(FLAGS) $(SRC) -o $(NAME)
+	$(CC) $(FLAGS1) $(FLAGS2) $(SRC) -o $(NAME)
 
 fclean:
 	$(RM) $(NAME)

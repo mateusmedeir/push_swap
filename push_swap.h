@@ -1,13 +1,28 @@
 #ifndef PUSH_SWAP_H
 #define PUSH_SWAP_H
 
-#include <stdlib.h>
-#include <stdio.h>
+#include "libft/libft.h"
 
-void	ft_merge_sort_arrays(int array[], int left, int middle, int right);
-void	ft_merge_sort_recursion(int array[], int left, int right);
-void	ft_merge_sort(int array[], int size);
-void	ft_bubble_sort(int array[], int size);
-int	*ft_convert(int argc, char *argv[]);
+typedef struct s_dolst
+{
+	int		number;
+	struct s_dolst	*next;
+	struct s_dolst	*prev;
+}				t_dolst;
+
+typedef struct s_stack
+{
+	struct s_dolst	*top;
+	struct s_dolst	*bottom;
+}				t_stack;
+
+//push_swap
+void	ft_push_swap(int argc, char *argv[]);
+//stack
+t_dolst	*ft_dolst_new(int number);
+void	ft_stack_add(t_stack *stack, t_dolst *value);
+t_stack	*ft_stack_new();
+//load_stack
+t_stack	*ft_load_stack(char *values[], int size);
 
 #endif
