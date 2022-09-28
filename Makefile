@@ -1,4 +1,4 @@
-SRC	= push_swap.c stack.c load_stack.c
+SRC	= push_swap.c stack1.c stack2.c
 
 CC	= cc
 FLAGS1	= -Wall -Wextra -Werror
@@ -19,6 +19,7 @@ $(NAME):
 
 fclean:
 	$(RM) $(NAME)
+	@make fclean -C libft
 
 re:	fclean all
 

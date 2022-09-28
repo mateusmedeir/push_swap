@@ -18,11 +18,11 @@ typedef struct s_stack
 
 //push_swap
 void	ft_push_swap(int argc, char *argv[]);
-//stack
+//stack1
 t_dolst	*ft_dolst_new(int number);
 void	ft_stack_add(t_stack *stack, t_dolst *value);
 t_stack	*ft_stack_new();
-//load_stack
+//stack2
+int		ft_check_duplicated(t_stack *stack, t_dolst *value);
 t_stack	*ft_load_stack(char *values[], int size);
-
 #endif
