@@ -29,7 +29,7 @@ t_stack	*ft_load_stack(char *values[], int size)
 		tmp = ft_dolst_new(ft_atoi(values[counter++]));
 		if (!ft_check_duplicated(stack, tmp))
 			return (NULL);
-		ft_stack_add(stack, tmp);
+		ft_stack_addbottom(stack, tmp);
 	}
 	return (stack);
 }

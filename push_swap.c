@@ -1,18 +1,34 @@
 #include "push_swap.h"
 #include <stdio.h>
 
+void	print(t_dolst *top, char *txt)
+{
+	struct s_dolst  *tmp;
+
+	tmp = top;
+	printf("%s: ", txt);
+	 while (tmp)
+        {
+                printf("%d ", tmp->number);
+                tmp = tmp->next;
+        }
+	printf("\n");
+}
+
 void	ft_push_swap(int argc, char *argv[])
 {
 	struct s_stack	*a;
-	struct s_dolst	*tmp;
+	struct s_stack	*b;
 
 	a = ft_load_stack(argv + 1, argc - 1);
-	tmp = a->top;
-	while (tmp)
-	{
-		printf("%d\n", tmp->number);
-		tmp = tmp->next;
-	}
+	b = ft_stack_new();
+	print(a->top, "BEFORE");
+	ft_stack_p(a, b, "pb");
+	ft_stack_p(a, b, "pb");
+	ft_stack_s(a, "sa");
+	ft_stack_s(b, "sb");
+	print(a->top, "a");
+	print(b->top, "b");
 }
 
 int	main(int argc, char *argv[])
