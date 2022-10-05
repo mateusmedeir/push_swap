@@ -23,10 +23,10 @@ void	ft_push_swap(int argc, char *argv[])
 	a = ft_load_stack(argv + 1, argc - 1);
 	b = ft_stack_new();
 	print(a->top, "BEFORE");
-	ft_stack_p(a, b, "pb");
-	ft_stack_p(a, b, "pb");
-	ft_stack_s(a, "sa");
-	ft_stack_s(b, "sb");
+	ft_stack_pab(a, b, "pb");
+	ft_stack_pab(a, b, "pb");
+	ft_stack_sab(a, "sa");
+	ft_stack_sab(b, "sb");
 	print(a->top, "a");
 	print(b->top, "b");
 }

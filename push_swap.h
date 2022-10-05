@@ -24,9 +24,13 @@ t_stack	*ft_stack_new();
 void	ft_stack_addtop(t_stack *stack, t_dolst *value);
 void	ft_stack_addbottom(t_stack *stack, t_dolst *value);
 void	ft_stack_to_stack(t_stack *from, t_stack *to);
-//operations
-void	ft_stack_s(t_stack *stack, char *str);
-void	ft_stack_p(t_stack *from, t_stack *to, char *str);
+//operations1
+void	ft_stack_sab(t_stack *stack, char *str);
+void	ft_stack_pab(t_stack *from, t_stack *to, char *str);
+void	ft_stack_rab(t_stack *stack, char *str);
+void	ft_stack_rrab(t_stack *stack, char *str);
+//operations2
+
 //load
 int		ft_check_duplicated(t_stack *stack, t_dolst *value);
 t_stack	*ft_load_stack(char *values[], int size);
