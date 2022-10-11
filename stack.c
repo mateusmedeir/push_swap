@@ -28,7 +28,7 @@ t_stack	*ft_stack_new()
 
 void    ft_stack_addtop(t_stack *stack, t_dolst *value)
 {
-        if (!stack->top && !stack->bottom)
+        if (!stack->top)
         {
                 stack->top = value;
                 stack->bottom = value;
@@ -43,7 +43,7 @@ void    ft_stack_addtop(t_stack *stack, t_dolst *value)
 
 void	ft_stack_addbottom(t_stack *stack, t_dolst *value)
 {
-	if (!stack->top && !stack->bottom)
+	if (!stack->top)
 	{
 		stack->top = value;
 		stack->bottom = value;
@@ -61,8 +61,16 @@ void	ft_stack_to_stack(t_stack *from, t_stack *to)
 	struct s_dolst *tmp;
 
 	tmp = from->top;
-	tmp->next->prev = NULL;
-	from->top = tmp->next;
-	tmp->next = NULL;
+	if (tmp->next)
+	{
+		tmp->next->prev = NULL;
+		from->top = tmp->next;
+		tmp->next = NULL;
+	}
+	else
+	{
+		from->top = NULL;
+		from->bottom = NULL;
+	}
 	ft_stack_addtop(to, tmp);
 }

@@ -1,5 +1,10 @@
 #include "push_swap.h"
 
+int	ft_covert(char *str)
+{
+	
+}
+
 int	ft_check_duplicated(t_stack *stack, t_dolst *value)
 {
 	struct s_dolst *tmp;
