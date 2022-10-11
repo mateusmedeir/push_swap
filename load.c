@@ -1,8 +1,24 @@
 #include "push_swap.h"
 
-int	ft_covert(char *str)
+int	ft_check_value(char *str)
 {
-	
+	long int	value;
+	int		check;
+
+	value = 0;
+	check = 0;
+	if (*str == '-')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		check++;
+		value = value * 10 + (*str - '0');
+		str++;
+	}
+	if (check > 0 && !*str && (value >= -2147483648 && value <= 2147483647))
+		return (1);
+	else
+		return (0);
 }
 
 int	ft_check_duplicated(t_stack *stack, t_dolst *value)
@@ -31,9 +47,17 @@ t_stack	*ft_load_stack(char *values[], int size)
 	counter = 0;
 	while (counter < size)
 	{
+		if (!ft_check_value(values[counter]))
+		{
+			ft_clear_stack(stack);
+			return (NULL);
+		}
 		tmp = ft_dolst_new(ft_atoi(values[counter++]));
 		if (!ft_check_duplicated(stack, tmp))
+		{
+			ft_clear_stack(stack);
 			return (NULL);
+		}
 		ft_stack_addbottom(stack, tmp);
 	}
 	return (stack);

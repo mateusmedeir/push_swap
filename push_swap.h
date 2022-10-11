@@ -18,6 +18,8 @@ typedef struct s_stack
 
 //push_swap
 void	ft_push_swap(int argc, char *argv[]);
+//sort
+void	ft_sort(t_stack *a, t_stack *b);
 //stack
 t_dolst	*ft_dolst_new(int number);
 t_stack	*ft_stack_new();
@@ -34,6 +36,9 @@ void	ft_stack_call(t_stack *stack, void (*f)(t_stack*), char *str);
 void	ft_stack_op(t_stack *a, t_stack *b, int check);
 void	ft_stack_dbop(t_stack *a, t_stack *b, int check);
 //load
+int		ft_check_value(char *str);
 int		ft_check_duplicated(t_stack *stack, t_dolst *value);
 t_stack	*ft_load_stack(char *values[], int size);
+//error
+void	ft_clear_stack(t_stack *stack);
 #endif
