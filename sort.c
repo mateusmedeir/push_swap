@@ -27,6 +27,12 @@ void	ft_sort(t_stack *a, t_stack *b)
 				ft_stack_op(a, b, 1);
 		}
 		while (b->top)
+		{
+			if (b->top->next && b->top->number < b->top->next->number)
+				ft_stack_op(a, b, 1);
 			ft_stack_op(a, b, 2);
+			if (a->top->next && a->top->number > a->top->next->number)
+				ft_stack_op(a, b, 0);
+		}
 	}
 }
