@@ -69,7 +69,7 @@ void	ft_stack_to_stack(t_stack *from, t_stack *to)
 	}
 	else
 	{
-		from->top = NULL;
+		from->top = NULL;;
 		from->bottom = NULL;
 	}
 	ft_stack_addtop(to, tmp);

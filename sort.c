@@ -1,34 +1,32 @@
 #include "push_swap.h"
 
-void	ft_sort(t_stack *a, t_stack *b)
+int	ft_check_sort(t_stack *stack)
 {
-//	int	counter;
-//	int	house;
+	struct s_dolst	*tmp;
 
-	ft_stack_op(a, b, 3);
-	ft_stack_op(a, b, 3);
-	ft_stack_op(a, b, 3);
-	ft_stack_op(a, b, 3);
-	ft_stack_dbop(a, b, 0);
-	ft_stack_dbop(a, b, 1);
-	ft_stack_dbop(a, b, 0);
-	ft_stack_dbop(a, b, 2);
-/*	counter = 1;
-	house = 1;
-	while (counter)
+	tmp = stack->top;
+	while (tmp && tmp->next)
 	{
-		if (counter % 2 != 0)
-			ft_sort_stack(a, b, house);
-	}*/
+		if (tmp->number > tmp->next->number)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
 }
 
-/*void	ft_sort_stack(t_stack *from, t_stack *to, int house)
+void	ft_sort(t_stack *a, t_stack *b)
 {
-	struct s_stack	*tmp;
-
-	tmp = from->top;
-	while (tmp)
+	while (!ft_check_sort(a))
 	{
-		
+		while (a->top)
+		{
+			if (a->top->next && a->top->number > a->top->next->number)
+				ft_stack_op(a, b, 0);
+			ft_stack_op(a, b, 3);
+			if (b->top->next && b->top->number < b->top->next->number)
+				ft_stack_op(a, b, 1);
+		}
+		while (b->top)
+			ft_stack_op(a, b, 2);
 	}
-}*/
+}
