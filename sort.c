@@ -16,23 +16,25 @@ int	ft_check_sort(t_stack *stack)
 
 void	ft_sort(t_stack *a, t_stack *b)
 {
+	int	check;
+	int	counter;
+
+	check = 0;
 	while (!ft_check_sort(a))
 	{
-		while (a->top)
+		counter = a->size;
+		while (counter > 0)
 		{
-			if (a->top->next && a->top->number > a->top->next->number)
-				ft_stack_op(a, b, 0);
-			ft_stack_op(a, b, 3);
-			if (b->top->next && b->top->number < b->top->next->number)
-				ft_stack_op(a, b, 1);
+			if (((a->top->number >> check) & 1) == 1)
+				ft_stack_op(a, b, 4);
+			else
+				ft_stack_op(a, b, 3);
+			counter--;
 		}
-		while (b->top)
+		while (b->size)
 		{
-			if (b->top->next && b->top->number < b->top->next->number)
-				ft_stack_op(a, b, 1);
 			ft_stack_op(a, b, 2);
-			if (a->top->next && a->top->number > a->top->next->number)
-				ft_stack_op(a, b, 0);
 		}
+		check++;
 	}
 }

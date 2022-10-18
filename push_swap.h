@@ -12,6 +12,7 @@ typedef struct s_dolst
 
 typedef struct s_stack
 {
+	int		size;
 	struct s_dolst	*top;
 	struct s_dolst	*bottom;
 }				t_stack;
@@ -42,4 +43,6 @@ int		ft_check_duplicated(t_stack *stack, t_dolst *value);
 t_stack	*ft_load_stack(char *values[], int size);
 //error
 void	ft_clear_stack(t_stack *stack);
+void	ft_error(void);
+void	ft_clean_error(t_stack *a, t_stack *b);
 #endif
