@@ -48,16 +48,10 @@ t_stack	*ft_load_stack(char *values[], int size)
 	while (counter < size)
 	{
 		if (!ft_check_value(values[counter]))
-		{
-			ft_clear_stack(stack);
-			return (NULL);
-		}
+			ft_clean_error(stack, NULL);
 		tmp = ft_dolst_new(ft_atoi(values[counter++]));
 		if (!ft_check_duplicated(stack, tmp))
-		{
-			ft_clear_stack(stack);
-			return (NULL);
-		}
+			ft_clean_error(stack, NULL);
 		ft_stack_addbottom(stack, tmp);
 	}
 	return (stack);

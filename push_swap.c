@@ -24,7 +24,7 @@ void	ft_push_swap(int argc, char *argv[])
 		ft_error();
 	b = ft_stack_new();
 	if (!b)
-		ft_clean_error(a, b);
+		free(a);
 	if (ft_check_sort(a))
 		exit(EXIT_SUCCESS);
 	else if (a->size <= 5)
