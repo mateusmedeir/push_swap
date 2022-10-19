@@ -1,19 +1,5 @@
 #include "push_swap.h"
 
-int	ft_check_sort(t_stack *stack)
-{
-	struct s_dolst	*tmp;
-
-	tmp = stack->top;
-	while (tmp && tmp->next)
-	{
-		if (tmp->number > tmp->next->number)
-			return (0);
-		tmp = tmp->next;
-	}
-	return (1);
-}
-
 void	ft_sort(t_stack *a, t_stack *b)
 {
 	int	check;

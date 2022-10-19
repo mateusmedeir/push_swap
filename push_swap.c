@@ -1,5 +1,19 @@
 #include "push_swap.h"
 
+int	ft_check_sort(t_stack *stack)
+{
+	t_dolst  *tmp;
+
+	tmp = stack->top;
+	while (tmp && tmp->next)
+	{
+		if (tmp->number > tmp->next->number)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
+
 void	ft_push_swap(int argc, char *argv[])
 {
 	struct s_stack	*a;
@@ -11,7 +25,12 @@ void	ft_push_swap(int argc, char *argv[])
 	b = ft_stack_new();
 	if (!b)
 		ft_clean_error(a, b);
-	ft_sort(a, b);
+	if (ft_check_sort(a))
+		exit(EXIT_SUCCESS);
+	else if (a->size <= 5)
+		ft_sort_lower(a, b);
+	else
+		ft_sort(a, b);
 }
 
 int	main(int argc, char *argv[])
