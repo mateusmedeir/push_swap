@@ -8,6 +8,7 @@ t_dolst	*ft_dolst_new(int number)
 	if (!new)
 		return (NULL);
 	new->number = number;
+	new->order = 0;
 	new->next = NULL;
 	new->prev = NULL;
 	return (new);

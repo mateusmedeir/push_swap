@@ -6,6 +6,7 @@
 typedef struct s_dolst
 {
 	int		number;
+	size_t		order;
 	struct s_dolst	*next;
 	struct s_dolst	*prev;
 }				t_dolst;
@@ -42,10 +43,13 @@ int	ft_stack_rrab(t_stack *stack);
 void	ft_stack_call(t_stack *stack, int (*f)(t_stack*), char *str);
 void	ft_stack_op(t_stack *a, t_stack *b, int check);
 void	ft_stack_dbop(t_stack *a, t_stack *b, int check);
-//load
+//load1
 int		ft_check_value(char *str);
 int		ft_check_duplicated(t_stack *stack, t_dolst *value);
 t_stack *ft_load_stack(char *values[], int size);
+//load2
+void	ft_get_order_helper(int *array, int size);
+void	ft_get_order(t_stack *stack);
 //error
 void	ft_clear_stack(t_stack *stack);
 void	ft_error(void);

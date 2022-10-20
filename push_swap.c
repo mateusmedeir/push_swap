@@ -35,7 +35,6 @@ void	ft_push_swap(int argc, char *argv[])
 
 int	main(int argc, char *argv[])
 {
-	if (argc <= 1)
-		ft_error();
-	ft_push_swap(argc, argv);
+	if (argc > 1)
+		ft_push_swap(argc, argv);
 }

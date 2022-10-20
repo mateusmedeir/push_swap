@@ -7,7 +7,7 @@ int	ft_check_value(char *str)
 
 	value = 0;
 	check = 0;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 		str++;
 	while (*str >= '0' && *str <= '9')
 	{
@@ -54,5 +54,6 @@ t_stack	*ft_load_stack(char *values[], int size)
 			ft_clean_error(stack, NULL);
 		ft_stack_addbottom(stack, tmp);
 	}
+	ft_get_order(stack);
 	return (stack);
 }

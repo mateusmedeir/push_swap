@@ -11,7 +11,7 @@ void	ft_sort(t_stack *a, t_stack *b)
 		counter = a->size;
 		while (counter > 0)
 		{
-			if (((a->top->number >> check) & 1) == 1)
+			if (((a->top->order >> check) & 1) == 1)
 				ft_stack_op(a, b, 4);
 			else
 				ft_stack_op(a, b, 3);
