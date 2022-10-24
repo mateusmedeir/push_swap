@@ -14,12 +14,12 @@ int	ft_check_sort(t_stack *stack)
 	return (1);
 }
 
-void	ft_push_swap(int argc, char *argv[])
+void	ft_push_swap(char *values[], int size)
 {
 	struct s_stack	*a;
 	struct s_stack	*b;
 
-	a = ft_load_stack(argv + 1, argc - 1);
+	a = ft_load_stack(values, size);
 	if (!a)
 		ft_error();
 	b = ft_stack_new();
@@ -36,5 +36,7 @@ void	ft_push_swap(int argc, char *argv[])
 int	main(int argc, char *argv[])
 {
 	if (argc > 1)
-		ft_push_swap(argc, argv);
+	{
+		ft_push_swap(argv + 1, argc - 1);
+	}
 }

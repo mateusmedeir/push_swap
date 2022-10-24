@@ -20,7 +20,7 @@ typedef struct s_stack
 
 //push_swap
 int	ft_check_sort(t_stack *stack);
-void	ft_push_swap(int argc, char *argv[]);
+void	ft_push_swap(char *values[], int size);
 //sort_lower
 void	ft_sort_three(t_stack *a, t_stack *b);
 int	ft_lower_numbers(t_stack *stack, int check);
