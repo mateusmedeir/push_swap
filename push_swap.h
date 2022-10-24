@@ -6,7 +6,7 @@
 typedef struct s_dolst
 {
 	int		number;
-	size_t		order;
+	int		order;
 	struct s_dolst	*next;
 	struct s_dolst	*prev;
 }				t_dolst;

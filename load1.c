@@ -4,17 +4,24 @@ int	ft_check_value(char *str)
 {
 	long int	value;
 	int		check;
+	int		signal;
 
 	value = 0;
 	check = 0;
+	signal = 1;
 	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			signal = -1;
 		str++;
+	}
 	while (*str >= '0' && *str <= '9')
 	{
 		check++;
 		value = value * 10 + (*str - '0');
 		str++;
 	}
+	value *= signal;
 	if (check > 0 && !*str && (value >= -2147483648 && value <= 2147483647))
 		return (1);
 	else
