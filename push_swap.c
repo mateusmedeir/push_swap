@@ -6,7 +6,7 @@
 /*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:21:39 by mmedeiro          #+#    #+#             */
-/*   Updated: 2022/10/25 11:01:10 by mmedeiro         ###   ########.fr       */
+/*   Updated: 2022/10/25 11:21:37 by mmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ int	ft_check_sort(t_stack *stack)
 void	ft_push_swap(char *values[], int size)
 {
 	struct s_stack	*a;
-	struct s_stack	*b;
+	//struct s_stack	*b;
 
 	a = ft_load_stack(values, size);
 	if (!a)
 		ft_error();
-	b = ft_stack_new();
+	/*b = ft_stack_new();
 	if (!b)
 		free(a);
 	if (ft_check_sort(a))
@@ -43,7 +43,7 @@ void	ft_push_swap(char *values[], int size)
 		ft_sort_lower(a, b);
 	else
 		ft_sort(a, b);
-	ft_clean(a, b);
+	ft_clean(a, b);*/
 }
 
 int	main(int argc, char *argv[])
