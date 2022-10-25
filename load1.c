@@ -6,7 +6,7 @@
 /*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:23:52 by mmedeiro          #+#    #+#             */
-/*   Updated: 2022/10/25 11:28:10 by mmedeiro         ###   ########.fr       */
+/*   Updated: 2022/10/25 12:02:31 by mmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,6 @@ t_stack	*ft_load_stack(char *values[], int size)
 	struct s_dolst	*tmp;
 	int				counter;
 
-	values++;
-	size++;
 	stack = ft_stack_new();
 	if (!stack)
 		return (NULL);
