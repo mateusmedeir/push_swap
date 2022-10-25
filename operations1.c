@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations1.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 10:35:38 by mmedeiro          #+#    #+#             */
+/*   Updated: 2022/10/25 10:35:39 by mmedeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_stack_sab(t_stack *stack)
@@ -29,7 +41,7 @@ int	ft_stack_pab(t_stack *from, t_stack *to)
 
 int	ft_stack_rab(t_stack *stack)
 {
-	struct s_dolst  *tmp;
+	struct s_dolst	*tmp;
 
 	if (!stack->top || !stack->top->next)
 		return (0);
@@ -45,7 +57,7 @@ int	ft_stack_rab(t_stack *stack)
 
 int	ft_stack_rrab(t_stack *stack)
 {
-	struct s_dolst  *tmp;
+	struct s_dolst	*tmp;
 
 	if (!stack->top || !stack->top->next)
 		return (0);

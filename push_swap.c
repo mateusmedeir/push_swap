@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 10:21:39 by mmedeiro          #+#    #+#             */
+/*   Updated: 2022/10/25 11:01:10 by mmedeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_check_sort(t_stack *stack)
 {
-	t_dolst  *tmp;
+	t_dolst	*tmp;
 
 	tmp = stack->top;
 	while (tmp && tmp->next)

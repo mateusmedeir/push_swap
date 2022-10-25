@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sort_lower.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 10:48:12 by mmedeiro          #+#    #+#             */
+/*   Updated: 2022/10/25 10:48:13 by mmedeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_sort_three(t_stack *a, t_stack *b)
@@ -15,11 +27,12 @@ void	ft_sort_three(t_stack *a, t_stack *b)
 			ft_stack_op(a, b, 0);
 	}
 }
+
 int	ft_lower_numbers(t_stack *stack, int check)
 {
 	struct s_dolst	*tmp;
-	int		lower;
-	int		se_lower;
+	int				lower;
+	int				se_lower;
 
 	tmp = stack->top;
 	lower = tmp->number;
@@ -39,11 +52,11 @@ int	ft_lower_numbers(t_stack *stack, int check)
 		return (se_lower);
 	return (lower);
 }
-#include <stdio.h>
+
 void	ft_sort_lower_helper(t_stack *a, t_stack *b)
 {
-	int     lower;
-        int     se_lower;
+	int	lower;
+	int	se_lower;
 
 	lower = ft_lower_numbers(a, 0);
 	if (a->size == 4)

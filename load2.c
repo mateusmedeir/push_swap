@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   load2.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 11:13:51 by mmedeiro          #+#    #+#             */
+/*   Updated: 2022/10/25 11:13:53 by mmedeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	ft_get_order_helper(int *array, int size)
+void	ft_get_array_order(int *array, int size)
 {
 	int	pos;
-	int     counter;
+	int	counter;
 	int	tmp;
 	int	check;
 
@@ -28,11 +40,11 @@ void	ft_get_order_helper(int *array, int size)
 	}
 }
 
-void    ft_get_order(t_stack *stack)
+int	*ft_get_order_helper(t_stack *stack)
 {
-	int     *array;
-	int     counter;
-	struct s_dolst  *tmp;
+	int				*array;
+	int				counter;
+	struct s_dolst	*tmp;
 
 	array = malloc(sizeof(stack->size));
 	if (!array)
@@ -44,7 +56,17 @@ void    ft_get_order(t_stack *stack)
 		array[counter++] = tmp->number;
 		tmp = tmp->next;
 	}
-	ft_get_order_helper(array, stack->size);
+	return (array);
+}
+
+void	ft_get_order(t_stack *stack)
+{
+	int				*array;
+	int				counter;
+	struct s_dolst	*tmp;
+
+	array = ft_get_order_helper(stack);
+	ft_get_array_order(array, stack->size);
 	tmp = stack->top;
 	while (tmp)
 	{

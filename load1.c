@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   load1.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 10:23:52 by mmedeiro          #+#    #+#             */
+/*   Updated: 2022/10/25 11:11:41 by mmedeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	ft_check_value(char *str)
 {
 	long int	value;
-	int		check;
-	int		signal;
+	int			check;
+	int			signal;
 
 	value = 0;
 	check = 0;
@@ -30,7 +42,7 @@ int	ft_check_value(char *str)
 
 int	ft_check_duplicated(t_stack *stack, t_dolst *value)
 {
-	struct s_dolst *tmp;
+	struct s_dolst	*tmp;
 
 	tmp = stack->top;
 	while (tmp)
@@ -46,14 +58,12 @@ t_stack	*ft_load_stack(char *values[], int size)
 {
 	struct s_stack	*stack;
 	struct s_dolst	*tmp;
-	int 			counter;
+	int				counter;
 
 	stack = ft_stack_new();
 	if (!stack)
 		return (NULL);
 	counter = 0;
-	values++;
-	size++;
 	while (counter < size)
 	{
 		if (!ft_check_value(values[counter]))

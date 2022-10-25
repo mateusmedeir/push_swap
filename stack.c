@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/10/25 10:52:17 by mmedeiro          #+#    #+#             */
+/*   Updated: 2022/10/25 10:52:18 by mmedeiro         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_dolst	*ft_dolst_new(int number)
@@ -12,10 +24,9 @@ t_dolst	*ft_dolst_new(int number)
 	new->next = NULL;
 	new->prev = NULL;
 	return (new);
-
 }
 
-t_stack	*ft_stack_new()
+t_stack	*ft_stack_new(void)
 {
 	struct s_stack	*new;
 
@@ -28,21 +39,21 @@ t_stack	*ft_stack_new()
 	return (new);
 }
 
-void    ft_stack_addtop(t_stack *stack, t_dolst *value)
+void	ft_stack_addtop(t_stack *stack, t_dolst *value)
 {
-        if (!stack->top)
-        {
+	if (!stack->top)
+	{
 		stack->size = 1;
-                stack->top = value;
-                stack->bottom = value;
-        }
-        else
-        {
-                value->next = stack->top;
-                stack->top->prev = value;
-                stack->top = value;
+		stack->top = value;
+		stack->bottom = value;
+	}
+	else
+	{
+		value->next = stack->top;
+		stack->top->prev = value;
+		stack->top = value;
 		stack->size++;
-        }
+	}
 }
 
 void	ft_stack_addbottom(t_stack *stack, t_dolst *value)
@@ -64,7 +75,7 @@ void	ft_stack_addbottom(t_stack *stack, t_dolst *value)
 
 void	ft_stack_to_stack(t_stack *from, t_stack *to)
 {
-	struct s_dolst *tmp;
+	struct s_dolst	*tmp;
 
 	tmp = from->top;
 	if (tmp->next)
@@ -75,7 +86,7 @@ void	ft_stack_to_stack(t_stack *from, t_stack *to)
 	}
 	else
 	{
-		from->top = NULL;;
+		from->top = NULL;
 		from->bottom = NULL;
 	}
 	from->size--;
