@@ -31,24 +31,11 @@ void	ft_push_swap(char *values[], int size)
 		ft_sort_lower(a, b);
 	else
 		ft_sort(a, b);
+	ft_clean(a, b);
 }
 
 int	main(int argc, char *argv[])
 {
-	char	**values;
-	int	counter;
-
 	if (argc > 1)
-	{
-		if (argc == 2)
-		{
-			values = ft_split(argv[1], ' ');
-			counter = 0;
-			while (values[counter])
-				counter++;
-			ft_push_swap(values, counter);
-		}
-		else
-			ft_push_swap(argv + 1, argc - 1);
-	}
+		ft_push_swap(argv + 1, argc - 1);
 }

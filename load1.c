@@ -52,6 +52,8 @@ t_stack	*ft_load_stack(char *values[], int size)
 	if (!stack)
 		return (NULL);
 	counter = 0;
+	values++;
+	size++;
 	while (counter < size)
 	{
 		if (!ft_check_value(values[counter]))

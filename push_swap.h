@@ -50,8 +50,8 @@ t_stack *ft_load_stack(char *values[], int size);
 //load2
 void	ft_get_order_helper(int *array, int size);
 void	ft_get_order(t_stack *stack);
-//error
-void	ft_clear_stack(t_stack *stack);
+//close
 void	ft_error(void);
 void	ft_clean_error(t_stack *a, t_stack *b);
+void	ft_clean(t_stack *a, t_stack *b);
 #endif

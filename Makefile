@@ -1,4 +1,4 @@
-SRC	= push_swap.c sort_lower.c sort.c stack.c operations1.c operations2.c load1.c load2.c error.c
+SRC	= push_swap.c sort_lower.c sort.c stack.c operations1.c operations2.c load1.c load2.c close.c
 
 CC	= cc
 FLAGS1	= -Wall -Wextra -Werror
