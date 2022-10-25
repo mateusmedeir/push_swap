@@ -6,7 +6,7 @@
 /*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:39:06 by mmedeiro          #+#    #+#             */
-/*   Updated: 2022/10/25 11:19:56 by mmedeiro         ###   ########.fr       */
+/*   Updated: 2022/10/25 13:14:11 by mmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int		*ft_get_order_helper(t_stack *stack);
 void	ft_get_order(t_stack *stack);
 //close
 void	ft_error(void);
+void	ft_clean(t_stack *stack);
 void	ft_clean_error(t_stack *a, t_stack *b);
-void	ft_clean(t_stack *a, t_stack *b);
+void	ft_clean_exit(t_stack *a, t_stack *b);
 #endif

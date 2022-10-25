@@ -6,7 +6,7 @@
 /*   By: mmedeiro <mmedeiro@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/25 10:21:39 by mmedeiro          #+#    #+#             */
-/*   Updated: 2022/10/25 12:02:48 by mmedeiro         ###   ########.fr       */
+/*   Updated: 2022/10/25 13:14:33 by mmedeiro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ft_push_swap(char *values[], int size)
 		ft_sort_lower(a, b);
 	else
 		ft_sort(a, b);
-	ft_clean(a, b);
+	ft_clean_exit(a, b);
 }
 
 int	main(int argc, char *argv[])
