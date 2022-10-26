@@ -9,18 +9,21 @@ NAME	= push_swap
 
 LIBFT	= libft/libft.a
 
-all:	$(LIBFT) $(NAME)
+all:		$(NAME)
 
 $(LIBFT):
-	@make -C libft
+		@make -C libft
 
-$(NAME):
-	$(CC) $(FLAGS1) $(FLAGS2) $(SRC) -o $(NAME)
+$(NAME):	$(LIBFT)
+		$(CC) $(FLAGS1) $(FLAGS2) $(SRC) -o $(NAME)
 
-fclean:
-	$(RM) $(NAME)
-	@make fclean -C libft
+clean:
+		@make clean -C libft
 
-re:	fclean all
+fclean:		clean
+		$(RM) $(NAME)
+		$(RM) $(LIBFT)
 
-.PHONY:	all fclean re
+re:		fclean all
+
+.PHONY:	all clean fclean re
