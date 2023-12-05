@@ -1,28 +1,38 @@
-SRC	= push_swap.c sort_lower.c sort.c stack.c operations1.c operations2.c load1.c load2.c close.c
+NAME		= push_swap
 
-CC	= cc
-FLAGS1	= -Wall -Wextra -Werror
-FLAGS2	= -L./libft -lft
-RM	= rm -f
+LIBFT_PATH	= libft
+LIBFT		= $(LIBFT_PATH)/libft.a
 
-NAME	= push_swap
+SRC			= push_swap.c   \
+			  sort_lower.c  \
+			  sort.c        \
+			  stack.c       \
+			  operations1.c \
+			  operations2.c \
+			  load1.c       \
+			  load2.c       \
+			  close.c
 
-LIBFT	= libft/libft.a
+CC			= cc
+RM			= rm -f
+FLAGS		= -Wall -Wextra -Werror
+LIBS		= -L./$(LIBFT_PATH) -lft
+
 
 all:		$(NAME)
 
 $(LIBFT):
-		@make -C libft
+			@make -C $(LIBFT_PATH)
 
 $(NAME):	$(LIBFT)
-		$(CC) $(FLAGS1) $(FLAGS2) $(SRC) -o $(NAME)
+			$(CC) $(FLAGS) $(SRC) -o $(NAME) $(LIBS)
 
 clean:
-		@make clean -C libft
+			@make clean -C $(LIBFT_PATH)
 
 fclean:		clean
-		$(RM) $(NAME)
-		$(RM) $(LIBFT)
+			$(RM) $(NAME)
+			$(RM) $(LIBFT)
 
 re:		fclean all
 
