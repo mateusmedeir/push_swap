@@ -46,12 +46,12 @@ int	*ft_get_order_helper(t_stack *stack)
 	int				counter;
 	struct s_dolst	*tmp;
 
-	array = malloc(sizeof(stack->size));
+	array = malloc(stack->size * sizeof(int));
 	if (!array)
 		ft_clean_error(stack, NULL);
 	counter = 0;
 	tmp = stack->top;
-	while (counter < stack->size)
+	while (tmp && counter < stack->size)
 	{
 		array[counter++] = tmp->number;
 		tmp = tmp->next;
@@ -71,7 +71,7 @@ void	ft_get_order(t_stack *stack)
 	while (tmp)
 	{
 		counter = -1;
-		while (++counter < stack->size)
+		while (++counter < stack->size && tmp)
 		{
 			if (array[counter] == tmp->number)
 				tmp->order = counter;
