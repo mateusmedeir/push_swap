@@ -6,7 +6,7 @@
 /*   By: matlopes <matlopes@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:53:38 by matlopes          #+#    #+#             */
-/*   Updated: 2023/12/05 10:53:40 by matlopes         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:21:05 by matlopes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,10 @@ t_stack	*ft_load_stack(char *values[], int size)
 			ft_clean_error(stack, NULL);
 		tmp = ft_dolst_new(ft_atoi(values[counter++]));
 		if (!ft_check_duplicated(stack, tmp))
+		{
+			free(tmp);
 			ft_clean_error(stack, NULL);
+		}
 		ft_stack_addbottom(stack, tmp);
 	}
 	ft_get_order(stack);

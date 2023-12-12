@@ -6,7 +6,7 @@
 /*   By: matlopes <matlopes@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 10:54:00 by matlopes          #+#    #+#             */
-/*   Updated: 2023/12/05 10:54:02 by matlopes         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:07:34 by matlopes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	ft_push_swap(char *values[], int size)
 		ft_error();
 	b = ft_stack_new();
 	if (!b)
-		free(a);
+		ft_clean_error(a, NULL);
 	if (ft_check_sort(a))
-		exit(EXIT_SUCCESS);
+		ft_clean_exit(a, b);
 	else if (a->size <= 5)
 		ft_sort_lower(a, b);
 	else
